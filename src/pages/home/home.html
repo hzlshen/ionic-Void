@@ -1,14 +1,18 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>这是首页</ion-title>
+  <ion-navbar color="secondary">
+    <ion-title>
+      首页
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addItem()"><ion-icon name="add-circle"></ion-icon></button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <!--<ion-searchbar-->
-    <!--[(ngModel)]="myInput"-->
-    <!--[showCancelButton]="shouldShowCancel"-->
-    <!--(ionInput)="onInput($event)"-->
-    <!--(ionCancel)="onCancel($event)">-->
-  <!--</ion-searchbar>-->
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items" (click)="viewItem(item)">
+      {{item.title}}
+    </ion-item>
+  </ion-list>
 </ion-content>
